@@ -1,0 +1,24 @@
+---
+- name: Add Trivy repository key
+  apt_key:
+    url: https://aquasecurity.github.io/trivy-repo/deb/public.key
+    state: present
+
+- name: Add Trivy repository
+  apt_repository:
+    repo: deb https://aquasecurity.github.io/trivy-repo/deb generic main
+    state: present
+
+- name: Install Trivy
+  apt:
+    name: trivy
+    state: present
+    update_cache: yes
+
+- name: Verify Trivy installation
+  command: trivy --version
+  register: trivy_version
+
+- name: Print Trivy version
+  debug:
+    msg: "{{ trivy_version.stdout }}"

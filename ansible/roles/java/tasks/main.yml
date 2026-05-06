@@ -1,0 +1,14 @@
+---
+- name: Install Java
+  apt:
+    name: openjdk-17-jdk
+    state: present
+    update_cache: yes
+
+- name: Verify Java installation
+  command: java -version
+  register: java_version
+
+- name: Print Java version
+  debug:
+    msg: "{{ java_version.stderr }}"

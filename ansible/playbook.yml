@@ -1,0 +1,13 @@
+---
+- name: Configure Jenkins Server
+  hosts: all
+  become: yes
+  remote_user: ubuntu
+  vars:
+    ansible_ssh_private_key_file: ~/.ssh/id_rsa
+
+  roles:
+    - java
+    - jenkins
+    - docker
+    - trivy
