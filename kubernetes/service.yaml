@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: final-project-service
+  namespace: ivolve
+spec:
+  selector:
+    app: final-project
+  ports:
+  - port: 5000
+    targetPort: 5000
+  type: ClusterIP
