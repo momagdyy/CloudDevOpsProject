@@ -1,0 +1,68 @@
+@Library('shared-library') _
+
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        IMAGE_NAME = "megzz22/final-project"
+        IMAGE_TAG = "${BUILD_NUMBER}"
+        REPO_URL = "https://github.com/momagdyy/CloudDevOpsProject.git"
+    }
+
+    stages {
+        stage('Build Image') {
+            steps {
+                dir('docker') {
+                    buildImage(IMAGE_NAME, IMAGE_TAG)
+                }
+            }
+        }
+
+        stage('Scan Image') {
+            steps {
+                scanImage(IMAGE_NAME, IMAGE_TAG)
+            }
+        }
+
+        stage('Push Image') {
+            steps {
+                sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+                pushImage(IMAGE_NAME, IMAGE_TAG)
+            }
+        }
+
+        stage('Delete Image Locally') {
+            steps {
+                removeImage(IMAGE_NAME, IMAGE_TAG)
+            }
+        }
+
+        stage('Update Manifests') {
+            steps {
+                updateManifests(IMAGE_NAME, IMAGE_TAG)
+            }
+        }
+
+        stage('Push Manifests') {
+            steps {
+                withCredentials([string(credentialsId: 'github-token', variable: 'GITHUB_TOKEN')]) {
+                    pushManifests("https://momagdyy:${GITHUB_TOKEN}@github.com/momagdyy/CloudDevOpsProject.git", IMAGE_TAG)
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished!'
+            sh 'docker logout'
+        }
+        success {
+            echo 'Pipeline succeeded! ✅'
+        }
+        failure {
+            echo 'Pipeline failed! ❌'
+        }
+    }
+}
