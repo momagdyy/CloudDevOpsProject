@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: final-project
-        image: 317492542025.dkr.ecr.us-east-1.amazonaws.com/clouddevops-repo:latest
+        image: 317492542025.dkr.ecr.us-east-1.amazonaws.com/clouddevops-repo:6
         ports:
         - containerPort: 5000
         resources:
