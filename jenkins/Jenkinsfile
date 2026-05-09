@@ -4,8 +4,8 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        IMAGE_NAME = "megzz22/final-project"
+        ECR_REGISTRY = "317492542025.dkr.ecr.us-east-1.amazonaws.com"
+        IMAGE_NAME = "317492542025.dkr.ecr.us-east-1.amazonaws.com/clouddevops-repo"
         IMAGE_TAG = "${BUILD_NUMBER}"
         REPO_URL = "https://github.com/momagdyy/CloudDevOpsProject.git"
     }
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh "echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin"
+                sh "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ECR_REGISTRY}"
                 pushImage(IMAGE_NAME, IMAGE_TAG)
             }
         }

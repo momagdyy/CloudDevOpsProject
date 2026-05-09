@@ -26,7 +26,7 @@ resource "aws_iam_role_policy_attachment" "eks_cluster_policy" {
 resource "aws_eks_cluster" "main" {
   name     = "${var.project_name}-eks"
   role_arn = aws_iam_role.eks_cluster.arn
-  version  = "1.28"
+  version  = "1.30"
 
   vpc_config {
     subnet_ids = var.private_subnet_ids
@@ -88,7 +88,7 @@ resource "aws_eks_node_group" "main" {
     min_size     = 2
   }
 
-  instance_types = ["t2.micro"]
+  instance_types = ["t3.micro"]
 
   tags = {
     Name = "${var.project_name}-node-group"

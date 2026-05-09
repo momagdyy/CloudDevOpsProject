@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: final-project
-        image: megzz22/final-project:4
+        image: 317492542025.dkr.ecr.us-east-1.amazonaws.com/clouddevops-repo:latest
         ports:
         - containerPort: 5000
         resources:

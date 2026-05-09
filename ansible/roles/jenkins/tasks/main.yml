@@ -1,13 +1,17 @@
 ---
-- name: Add Jenkins repository key
-  apt_key:
-    url: https://pkg.jenkins.io/debian/jenkins.io-2023.key
+- name: Install required packages
+  apt:
+    name:
+      - openjdk-21-jdk
+      - curl
+      - fontconfig
     state: present
+    update_cache: yes
 
-- name: Add Jenkins repository
-  apt_repository:
-    repo: deb https://pkg.jenkins.io/debian binary/
-    state: present
+- name: Add Jenkins repository without GPG check
+  copy:
+    dest: /etc/apt/sources.list.d/jenkins.list
+    content: "deb [trusted=yes] https://pkg.jenkins.io/debian-stable binary/"
 
 - name: Install Jenkins
   apt:
@@ -15,8 +19,25 @@
     state: present
     update_cache: yes
 
-- name: Start Jenkins service
-  service:
+- name: Create systemd override directory
+  file:
+    path: /etc/systemd/system/jenkins.service.d
+    state: directory
+    mode: '0755'
+
+- name: Force Port 8080 and Java 21 Path in systemd
+  copy:
+    dest: /etc/systemd/system/jenkins.service.d/override.conf
+    content: |
+      [Service]
+      Environment="JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64"
+      Environment="JENKINS_PORT=8080"
+      ExecStart=
+      ExecStart=/usr/bin/java -Djava.awt.headless=true -jar /usr/share/java/jenkins.war --webroot=/var/cache/jenkins/war --httpPort=8080
+
+- name: Reload systemd and Restart Jenkins
+  systemd:
     name: jenkins
-    state: started
+    state: restarted
     enabled: yes
+    daemon_reload: yes
