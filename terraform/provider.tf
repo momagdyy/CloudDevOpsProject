@@ -7,12 +7,12 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "clouddevops-terraform-state"
+    bucket = "clouddevops-terraform-state-momagdyy"
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
 }
 
 provider "aws" {
-  region = var.region
+  region = "us-east-1"
 }
