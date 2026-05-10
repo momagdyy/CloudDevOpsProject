@@ -117,11 +117,6 @@ EXPOSE 5000
 CMD ["python3", "app.py"]
 ```
 
-### Screenshot:
-[ADD SCREENSHOT: Docker build output]
-
----
-
 ## 3️⃣ Terraform - AWS Infrastructure
 
 ### Resources Created:
