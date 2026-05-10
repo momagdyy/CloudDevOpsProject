@@ -100,7 +100,7 @@ docker run -p 5000:5000 final-project
 ```
 
 ### Screenshot:
-[ADD SCREENSHOT: App running in browser]
+<img width="1913" height="962" alt="Screenshot 2026-05-09 150151" src="https://github.com/user-attachments/assets/3522de2d-be70-431e-a347-46f0b89b1065" />
 
 ---
 
@@ -158,11 +158,13 @@ terraform destroy
 ```
 
 ### Screenshot:
-[ADD SCREENSHOT: terraform apply output]
-[ADD SCREENSHOT: AWS Console - VPC]
-[ADD SCREENSHOT: AWS Console - EKS Cluster]
-[ADD SCREENSHOT: AWS Console - EC2 Instance]
-[ADD SCREENSHOT: AWS Console - ECR Repository]
+<img width="923" height="426" alt="Screenshot 2026-05-09 181919" src="https://github.com/user-attachments/assets/4a8d29a0-d9ea-440a-beb3-647cfe9d41ce" />
+<img width="867" height="426" alt="Screenshot 2026-05-09 154939" src="https://github.com/user-attachments/assets/f2296f9c-a475-41ed-9692-3cab4a773fbd" />
+<img width="1918" height="866" alt="Screenshot 2026-05-09 175650" src="https://github.com/user-attachments/assets/fe100e68-973f-464e-9b71-39e7cd10b405" />
+<img width="1918" height="887" alt="Screenshot 2026-05-09 175328" src="https://github.com/user-attachments/assets/bfed4e06-c930-4d5f-8258-d03da6b2cc7e" />
+<img width="1917" height="812" alt="Screenshot 2026-05-09 183408" src="https://github.com/user-attachments/assets/3632a059-4b05-4743-9e37-0dba82415a68" />
+<img width="1558" height="747" alt="Screenshot 2026-05-09 181444" src="https://github.com/user-attachments/assets/82a608f3-443c-4c8c-ae3c-fa2c3e5ed295" />
+
 
 ---
 
@@ -183,8 +185,8 @@ ansible-playbook -i "EC2_IP," -u ubuntu \
 ```
 
 ### Screenshot:
-[ADD SCREENSHOT: Ansible playbook output]
-[ADD SCREENSHOT: Jenkins running on EC2]
+<img width="1456" height="587" alt="Screenshot 2026-05-09 181643" src="https://github.com/user-attachments/assets/e01bf31b-636a-41e4-988f-03a8d531599e" />
+<img width="1918" height="967" alt="Screenshot 2026-05-09 180453" src="https://github.com/user-attachments/assets/3c75e58a-eb38-4eb5-b64a-8333b4af0599" />
 
 ---
 
@@ -207,9 +209,11 @@ kubectl get service -n ivolve
 ```
 
 ### Screenshot:
-[ADD SCREENSHOT: kubectl get pods -n ivolve]
-[ADD SCREENSHOT: kubectl get nodes]
-[ADD SCREENSHOT: App accessible via LoadBalancer URL]
+<img width="705" height="107" alt="Screenshot 2026-05-09 192430" src="https://github.com/user-attachments/assets/94a00097-4ac8-4e87-9390-0f647744a58b" />
+<img width="797" height="122" alt="Screenshot 2026-05-09 192406" src="https://github.com/user-attachments/assets/46d1e6f7-3032-4f68-8da9-7086c3c99d90" />
+<img width="1247" height="113" alt="Screenshot 2026-05-09 192452" src="https://github.com/user-attachments/assets/fdf62f29-4718-4839-a280-0fdaab4e492d" />
+<img width="1917" height="952" alt="Screenshot 2026-05-09 193825" src="https://github.com/user-attachments/assets/56972283-6cfb-48c4-97f8-25dcda0cf703" />
+
 
 ---
 
@@ -228,9 +232,8 @@ Located in `jenkins/shared-library/vars/`
 Each stage uses a reusable Groovy function.
 
 ### Screenshot:
-[ADD SCREENSHOT: Jenkins pipeline success]
-[ADD SCREENSHOT: Pipeline stages view]
-[ADD SCREENSHOT: ECR image pushed]
+<img width="1918" height="922" alt="Screenshot 2026-05-09 202027" src="https://github.com/user-attachments/assets/e0dfbacd-7625-41d1-b2bd-ed5c93e3ef17" />
+<img width="1918" height="860" alt="Screenshot 2026-05-09 202223" src="https://github.com/user-attachments/assets/b39fe32d-c58f-4fa0-b101-4b6ccf4355b6" />
 
 ---
 
@@ -250,8 +253,9 @@ kubectl apply -f argocd/application.yaml
 ```
 
 ### Screenshot:
-[ADD SCREENSHOT: ArgoCD UI showing Synced status]
-[ADD SCREENSHOT: ArgoCD application tree]
+<img width="1910" height="904" alt="Screenshot 2026-05-07 013227" src="https://github.com/user-attachments/assets/4c8e3146-3e85-4ccc-b6d1-3944df61a0d1" />
+<img width="1914" height="968" alt="Screenshot 2026-05-07 013156" src="https://github.com/user-attachments/assets/180aa792-db24-4675-8a4f-de31711b9f96" />
+
 
 ---
 
