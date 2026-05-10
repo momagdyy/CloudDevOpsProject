@@ -41,50 +41,45 @@ ArgoCD Auto-Sync to EKS
 ---
 
 ## 📁 Project Structure
-CloudDevOpsProject/
-├── docker/
-│   ├── app.py              → Flask application
-│   ├── requirements.txt    → Python dependencies
-│   ├── Dockerfile          → Container build instructions
-│   ├── static/             → CSS and images
-│   └── templates/          → HTML templates
-├── terraform/
-│   ├── main.tf             → Root module
-│   ├── variables.tf        → Input variables
-│   ├── outputs.tf          → Output values
-│   ├── provider.tf         → AWS provider config
-│   └── modules/
-│       ├── network/        → VPC, Subnets, IGW, NAT
-│       ├── server/         → Jenkins EC2
-│       ├── eks/            → EKS Cluster & Node Group
-│       └── ecr/            → Container Registry
-├── ansible/
-│   ├── playbook.yml        → Main playbook
-│   ├── ansible.cfg         → Ansible configuration
-│   ├── inventory/          → Dynamic inventory
-│   └── roles/
-│       ├── java/           → Java installation
-│       ├── jenkins/        → Jenkins installation
-│       ├── docker/         → Docker installation
-│       └── trivy/          → Trivy installation
-├── kubernetes/
-│   ├── namespace.yaml      → ivolve namespace
-│   ├── deployment.yaml     → App deployment
-│   ├── service.yaml        → LoadBalancer service
-│   └── ingress.yaml        → Ingress rules
-├── jenkins/
-│   ├── Jenkinsfile         → CI Pipeline
-│   └── shared-library/
-│       └── vars/
-│           ├── buildImage.groovy
-│           ├── scanImage.groovy
-│           ├── pushImage.groovy
-│           ├── removeImage.groovy
-│           ├── updateManifests.groovy
-│           └── pushManifests.groovy
-├── argocd/
-│   └── application.yaml    → ArgoCD app config
-└── README.md
+
+    CloudDevOpsProject/
+    ├── docker/
+    │   ├── app.py
+    │   ├── requirements.txt
+    │   ├── Dockerfile
+    │   ├── static/
+    │   └── templates/
+    ├── terraform/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   ├── outputs.tf
+    │   ├── provider.tf
+    │   └── modules/
+    │       ├── network/
+    │       ├── server/
+    │       ├── eks/
+    │       └── ecr/
+    ├── ansible/
+    │   ├── playbook.yml
+    │   ├── ansible.cfg
+    │   ├── inventory/
+    │   └── roles/
+    │       ├── java/
+    │       ├── jenkins/
+    │       ├── docker/
+    │       └── trivy/
+    ├── kubernetes/
+    │   ├── namespace.yaml
+    │   ├── deployment.yaml
+    │   ├── service.yaml
+    │   └── ingress.yaml
+    ├── jenkins/
+    │   ├── Jenkinsfile
+    │   └── shared-library/
+    │       └── vars/
+    ├── argocd/
+    │   └── application.yaml
+    └── README.md
 
 ---
 
