@@ -3,12 +3,12 @@
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 This project demonstrates a complete end-to-end DevOps pipeline for a Python Flask web application, implementing modern DevOps practices including Infrastructure as Code, Configuration Management, Containerization, Container Orchestration, and CI/CD automation.
 
 ---
 
-## 🏗️ Architecture Overview
+## Architecture Overview
 Developer → GitHub → Jenkins CI → ECR → ArgoCD → Kubernetes (EKS)
 ↓
 Trivy Scan
@@ -23,7 +23,7 @@ ArgoCD Auto-Sync to EKS
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 | Tool | Purpose |
 |---|---|
@@ -40,7 +40,7 @@ ArgoCD Auto-Sync to EKS
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
     CloudDevOpsProject/
     ├── docker/
@@ -266,7 +266,7 @@ deployment.yaml updated with new tag
 Updated manifest pushed to GitHub
 ArgoCD detects manifest change
 ArgoCD deploys new version to EKS
-Users see updated application ✅
+Users see updated application 
 
 
 ---
@@ -275,18 +275,18 @@ Users see updated application ✅
 
 | Component | Status |
 |---|---|
-| Application | ✅ Running |
-| Docker Image | ✅ Built & Pushed to ECR |
-| AWS Infrastructure | ✅ Created with Terraform |
-| Jenkins Configuration | ✅ Configured with Ansible |
-| Kubernetes Deployment | ✅ Running on EKS |
-| CI Pipeline | ✅ Fully Automated |
-| CD with ArgoCD | ✅ Auto-syncing |
-| Security Scanning | ✅ Trivy integrated |
+| Application |  Running |
+| Docker Image |  Built & Pushed to ECR |
+| AWS Infrastructure |  Created with Terraform |
+| Jenkins Configuration |  Configured with Ansible |
+| Kubernetes Deployment |  Running on EKS |
+| CI Pipeline |  Fully Automated |
+| CD with ArgoCD |  Auto-syncing |
+| Security Scanning |  Trivy integrated |
 
 ---
 
-## 🚀 Setup Instructions
+##  Setup Instructions
 
 ### Prerequisites:
 - AWS Account
