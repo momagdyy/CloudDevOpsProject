@@ -322,7 +322,7 @@ kubectl apply -f argocd/application.yaml
 ---
 
 ## 👨‍💻 Author
-Mohamed Magdy
-NTI DevOps Training Track
-iVolve Technologies Internship
-2026
+- Mohamed Magdy
+- NTI DevOps Training Track
+- iVolve Technologies Internship
+- 2026
