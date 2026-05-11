@@ -9,7 +9,7 @@ This project demonstrates a complete end-to-end DevOps pipeline for a Python Fla
 ---
 
 ## Architecture Overview
-<img width="4072" height="1806" alt="diagram-1778509435745" src="https://github.com/user-attachments/assets/d43f495b-91c5-4c98-bd5c-1ee8ef9fa03f" />
+Developer → GitHub → Jenkins CI → ECR → ArgoCD → Kubernetes (EKS) ↓ Trivy Scan ↓ Docker Build ↓ Push to ECR ↓ Update K8s Manifests ↓ ArgoCD Auto-Sync to EKS
 
 ---
 
